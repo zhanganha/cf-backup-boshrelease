@@ -1,0 +1,4 @@
+set -e -x
+
+cd ${BUILD_DIR}/cf_backup
+BUNDLE_WITHOUT=development:test bundle package --all

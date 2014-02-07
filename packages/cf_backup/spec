@@ -1,0 +1,7 @@
+---
+name: cf_backup
+dependencies:
+- ruby
+files: 
+- cf_backup/{Gemfile,Gemfile.lock}
+- cf_backup/vendor/cache/*.gem

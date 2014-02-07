@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem "backup", "~> 4.0.0"
+gem "clockwork", "~> 0.7.0"
+gem "daemons", "~> 1.1.9"
