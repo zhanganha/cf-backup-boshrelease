@@ -13,23 +13,37 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: cf_backup_leader_z1
+  - name: cf_backup_z1
     instances: 1
     networks:
       - name: (( meta.network_name ))
         static_ips: (( static_ips(0) ))
-  - name: cf_backup_z1
-    instances: 2
-    networks:
-      - name: (( meta.network_name ))
-        static_ips: ~
-    properties:
-      cf_backup:
-        master: (( jobs.cf_backup_leader_z1.networks.cf_backup1.static_ips.[0] ))
-
+  
 compilation:
   cloud_properties:
     name: random
+
+properties:
+  cf_backup:
+    frequency: 30.seconds
+
+  ccdb_ng:
+    address: 10.244.0.30
+    databases:
+    - name: ccdb
+    port: 5524
+    roles:
+    - name: ccadmin
+      password: admin
+
+  uaadb:
+    address: 10.244.0.30
+    databases:
+    - name: uaadb
+    port: 5524
+    roles:
+    - name: uaaadmin
+      password: admin
 
 resource_pools:
   - name: small_z1

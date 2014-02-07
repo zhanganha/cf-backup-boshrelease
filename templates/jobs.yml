@@ -8,22 +8,16 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: cf_backup_leader_z1
-    template: cf-backup
-    instances: 0
-    resource_pool: small_z1
-    networks: (( merge ))
   - name: cf_backup_z1
-    template: cf-backup
+    template: cf_backup
     instances: 0
+    persistent_disk: 102400
     resource_pool: small_z1
     networks: (( merge ))
-    update:
-      canaries: 10
-    properties:
-      cf_backup:
-        master: (( merge ))
-
+  
 networks: (( merge ))
 
-properties: {}
+properties: 
+  ccdb_ng: (( merge ))
+  uaadb: (( merge ))
+  cf_backup: (( merge ))
