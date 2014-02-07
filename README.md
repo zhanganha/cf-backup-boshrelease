@@ -1,5 +1,7 @@
 # BOSH Release for cf-backup
 
+Bosh release containing backup related jobs for Cloud Foundry
+
 ## Usage
 
 To use this bosh release, first upload it to your bosh:
