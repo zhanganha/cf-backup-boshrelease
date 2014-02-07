@@ -1,0 +1,5 @@
+check process cf_backup
+  with pidfile /var/vcap/sys/run/cf_backup/cf_backup.pid
+  start program "/var/vcap/jobs/cf_backup/bin/monit_debugger cf_backup_ctl '/var/vcap/jobs/cf_backup/bin/cf_backup_ctl start'"
+  stop program "/var/vcap/jobs/cf_backup/bin/monit_debugger cf_backup_ctl '/var/vcap/jobs/cf_backup/bin/cf_backup_ctl stop'"
+  group vcap

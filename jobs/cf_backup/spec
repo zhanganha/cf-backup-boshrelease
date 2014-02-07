@@ -1,0 +1,41 @@
+---
+name: cf_backup
+packages:
+  - ruby
+  - cf_backup
+  - postgresql_client
+templates:
+  bin/cf_backup_ctl: bin/cf_backup_ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/config.rb: config/config.rb
+  config/models/cf_backup.rb.erb: config/models/cf_backup.rb
+  config/clock.rb: config/clock.rb
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+properties:
+  cf_backup.frequency:
+    description: "The frequency for making backups"
+    default: 30.minutes
+  cf_backup.keep:
+    description: "Number of backups to keep"
+    default: 10
+
+  ccdb_ng.address:
+    description: "The Cloud Controller database IP address"
+  ccdb_ng.databases:
+    description: "The list of databases used in Cloud Controller database including tag/name"
+  ccdb_ng.port:
+    description: "The Cloud Controller database Port"
+  ccdb_ng.roles:
+    description: "The list of database Roles used in Cloud Controller database including tag/name/password"
+
+  uaadb.address:
+    description: "The UAA database IP address"
+  uaadb.databases:
+    description: "The list of databases used in UAA database including tag/name"
+  uaadb.port:
+    description: "The UAA database Port"
+  uaadb.roles:
+    description: "The list of database Roles used in UAA database including tag/name/password"

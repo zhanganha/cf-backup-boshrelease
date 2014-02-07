@@ -1,0 +1,35 @@
+# encoding: utf-8
+
+##
+# Backup Generated: cf_backup
+# Once configured, you can run the backup with the following command:
+#
+# $ backup perform -t cf_backup [-c <path_to_configuration_file>]
+#
+# For more information about Backup's components, see the documentation at:
+# http://meskyanichi.github.io/backup
+#
+Model.new(:cf_backup, 'Description for cf_backup') do
+
+  ##
+  # PostgreSQL [Database]
+  #
+  <% [p("ccdb_ng"), p("uaadb")].each do |db| %>
+  <% name = db["databases"][0]["name"] %>
+  database PostgreSQL, :<%= name %> do |db|
+    db.name               = '<%= name %>'
+    db.username           = '<%= db["roles"][0]["name"] %>'
+    db.password           = '<%= db["roles"][0]["password"] %>'
+    db.host               = '<%= db["address"] %>'
+    db.port               = <%= db["port"] %>
+  end
+  <% end %>
+
+  ##
+  # Gzip [Compressor]
+  #
+  compress_with Gzip
+
+  store_with Local
+
+end
