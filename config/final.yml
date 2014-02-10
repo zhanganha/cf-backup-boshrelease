@@ -1,5 +1,9 @@
 ---
 blobstore:
-  provider: local
+  provider: s3
   options:
-    blobstore_path: /tmp/blobstore
+    bucket_name: cf-backup-boshrelease
+    access_key_id: AKIAJPWUHOHV42IMTNQQ
+    secret_access_key: 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
+    encryption_key: cloudfoundry-community
+final_name: admin-ui

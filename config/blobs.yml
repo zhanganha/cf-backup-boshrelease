@@ -1,1 +1,26 @@
---- {}
+---
+libyaml/yaml-0.1.4.tgz:
+  object_id: 281432b3-30db-4b0b-a775-25fc9b8f9497
+  sha: !binary |-
+    ZTBlNWUwOTE5MmFiMTBhNjA3ZTNkYTI5NzBkYjQ5MjExOGY1NjBmMg==
+  size: 471759
+postgresql/postgresql-9.3.2.tar.gz:
+  object_id: 7d344e46-1948-4e19-8b01-8f28b928130c
+  sha: !binary |-
+    MTA5YjEyYTljNGIzODAyMWY2NzIzYWU5NTRiYWRiNzdhODY1YThmNA==
+  size: 22218672
+ruby/bundler-1.2.1.gem:
+  object_id: cfc8b66e-63ad-46a5-ad6c-ccd215138d68
+  sha: !binary |-
+    MGNiZTZhZDdhNDFmMDY0ZDZjMTFjMTA1ODQ2NWZmZmIxYmQ1ODA2OQ==
+  size: 226816
+ruby/ruby-1.9.3-p484.tar.gz:
+  object_id: 3de2d31d-6d59-46c4-92b6-c3670d64a40e
+  sha: !binary |-
+    NmFlODBmNDI0OTY4YjVjZTY2MWVlOWIyYmVlMWMyMWFkYzllZTY3Yw==
+  size: 12576996
+ruby/rubygems-1.8.24.tgz:
+  object_id: 8691aa32-82ed-49e6-ae9a-b77da2fbf68c
+  sha: !binary |-
+    MzBmMjcwNDdlNzRmNzk0MzExNzczNmEwZDNlMjI0OTk0ZmVlMDkwNQ==
+  size: 380101
